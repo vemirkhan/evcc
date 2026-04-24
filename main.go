@@ -16,6 +16,8 @@ import (
 //   - Charger: Wallbox Pulsar Plus 22kW
 //   - Vehicle: VW ID.3
 //   - Grid meter: Shelly 3EM
+//   - Config file: /etc/evcc/evcc.yaml
+//   - Runs as systemd service: evcc.service
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
