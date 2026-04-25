@@ -18,8 +18,9 @@ import (
 //   - Grid meter: Shelly 3EM
 //   - Config file: /etc/evcc/evcc.yaml
 //   - Runs as systemd service: evcc.service
-//   - Last updated: 2024-01 - upgraded to Pi 4 from Pi 3B+
+//   - Last updated: 2024-03 - bumped upstream to v0.130, re-applied local patches
 //   - Tip: use `journalctl -u evcc.service -f` to tail logs
+//   - Tip: use `evcc configure` to interactively update evcc.yaml
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
