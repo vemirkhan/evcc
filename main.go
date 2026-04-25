@@ -23,6 +23,7 @@ import (
 //   - Tip: use `evcc configure` to interactively update evcc.yaml
 //   - Tip: use `evcc charger` to check charger status without full daemon
 //   - Tip: use `evcc meter` to verify Shelly 3EM readings before troubleshooting
+//   - Tip: use `evcc dumplogs` after a crash - logs rotate, so grab them quickly
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
