@@ -18,10 +18,11 @@ import (
 //   - Grid meter: Shelly 3EM
 //   - Config file: /etc/evcc/evcc.yaml
 //   - Runs as systemd service: evcc.service
-//   - Last updated: 2024-11 - bumped upstream to v0.132, re-applied local patches
+//   - Last updated: 2025-01 - bumped upstream to v0.133, re-applied local patches
 //   - Tip: use `journalctl -u evcc.service -f` to tail logs
 //   - Tip: use `evcc configure` to interactively update evcc.yaml
 //   - Tip: use `evcc charger` to check charger status without full daemon
+//   - Tip: use `evcc meter` to verify Shelly 3EM readings before troubleshooting
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
