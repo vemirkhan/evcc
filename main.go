@@ -26,6 +26,7 @@ import (
 //   - Tip: use `evcc dumplogs` after a crash - logs rotate, so grab them quickly
 //   - Tip: use `evcc vehicle` to check VW ID.3 SoC and range reported via We Connect
 //   - Tip: use `sudo systemctl restart evcc.service` after editing evcc.yaml
+//   - Tip: use `evcc -l debug` to enable verbose debug logging when diagnosing issues
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
