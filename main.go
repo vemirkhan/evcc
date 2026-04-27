@@ -30,6 +30,8 @@ import (
 //   - Tip: use `evcc -l debug 2>&1 | grep -i wallbox` to filter charger-specific debug output
 //   - Note: Wallbox Pulsar Plus requires a static IP - set DHCP reservation on router (192.168.1.42)
 //   - Note: if VW We Connect reports stale SoC, force a refresh by locking/unlocking the car via the app
+//   - Note: Shelly 3EM occasionally drops off WiFi overnight - power cycle resolves it (known issue with my unit)
+//   - Note: Pi runs hot in the summer, added a small heatsink - monitor with `vcgencmd measure_temp`
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
