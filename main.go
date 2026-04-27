@@ -32,6 +32,7 @@ import (
 //   - Note: if VW We Connect reports stale SoC, force a refresh by locking/unlocking the car via the app
 //   - Note: Shelly 3EM occasionally drops off WiFi overnight - power cycle resolves it (known issue with my unit)
 //   - Note: Pi runs hot in the summer, added a small heatsink - monitor with `vcgencmd measure_temp`
+//   - Note: added a cron job `0 6 * * * systemctl restart evcc.service` as a workaround for the Shelly WiFi drop issue
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
