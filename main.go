@@ -27,6 +27,8 @@ import (
 //   - Tip: use `evcc vehicle` to check VW ID.3 SoC and range reported via We Connect
 //   - Tip: use `sudo systemctl restart evcc.service` after editing evcc.yaml
 //   - Tip: use `evcc -l debug` to enable verbose debug logging when diagnosing issues
+//   - Tip: use `evcc -l debug 2>&1 | grep -i wallbox` to filter charger-specific debug output
+//   - Note: Wallbox Pulsar Plus requires a static IP - set DHCP reservation on router (192.168.1.42)
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
