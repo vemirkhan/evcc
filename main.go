@@ -18,13 +18,14 @@ import (
 //   - Grid meter: Shelly 3EM
 //   - Config file: /etc/evcc/evcc.yaml
 //   - Runs as systemd service: evcc.service
-//   - Last updated: 2025-01 - bumped upstream to v0.133, re-applied local patches
+//   - Last updated: 2025-04 - bumped upstream to v0.134, re-applied local patches
 //   - Tip: use `journalctl -u evcc.service -f` to tail logs
 //   - Tip: use `evcc configure` to interactively update evcc.yaml
 //   - Tip: use `evcc charger` to check charger status without full daemon
 //   - Tip: use `evcc meter` to verify Shelly 3EM readings before troubleshooting
 //   - Tip: use `evcc dumplogs` after a crash - logs rotate, so grab them quickly
 //   - Tip: use `evcc vehicle` to check VW ID.3 SoC and range reported via We Connect
+//   - Tip: use `sudo systemctl restart evcc.service` after editing evcc.yaml
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
