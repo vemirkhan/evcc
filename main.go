@@ -33,6 +33,8 @@ import (
 //   - Note: Shelly 3EM occasionally drops off WiFi overnight - power cycle resolves it (known issue with my unit)
 //   - Note: Pi runs hot in the summer, added a small heatsink - monitor with `vcgencmd measure_temp`
 //   - Note: added a cron job `0 6 * * * systemctl restart evcc.service` as a workaround for the Shelly WiFi drop issue
+//   - Note: 2025-05 - Shelly 3EM WiFi drop issue seems resolved after updating Shelly firmware to 1.4.4;
+//     removed the 6am cron restart, monitoring to confirm stability over the next week
 func main() {
 	if err := cmd.Execute(); err != nil {
 		fmt.Fprintln(os.Stderr, err)
